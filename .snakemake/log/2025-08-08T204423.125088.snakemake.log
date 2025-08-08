@@ -1,0 +1,71 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+Plot_pyscenic_R            2
+all_Plot_pyscenic_R        1
+total                      3
+
+Select jobs to execute...
+Execute 2 jobs...
+[Fri Aug  8 20:44:23 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_BoneMarrow/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+    jobid: 1
+    reason: Missing output files: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Fri Aug  8 20:44:23 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+    jobid: 4
+    reason: Missing output files: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 363:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpwjncz628.13_Plot_TF_rss.R' returned non-zero exit status 1.
+[Fri Aug  8 20:44:39 2025]
+Error in rule Plot_pyscenic_R:
+    message: None
+    jobid: 4
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+Removing output files of failed job Plot_pyscenic_R since they might be corrupted:
+result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 363:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpz9t_a_m9.13_Plot_TF_rss.R' returned non-zero exit status 1.
+[Fri Aug  8 20:44:41 2025]
+Error in rule Plot_pyscenic_R:
+    message: None
+    jobid: 1
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_BoneMarrow/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+Removing output files of failed job Plot_pyscenic_R since they might be corrupted:
+result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug  8 20:44:41 2025]
+Error in rule Plot_pyscenic_R:
+    message: None
+    jobid: 4
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+[Fri Aug  8 20:44:41 2025]
+Error in rule Plot_pyscenic_R:
+    message: None
+    jobid: 1
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_BoneMarrow/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-08T204423.125088.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

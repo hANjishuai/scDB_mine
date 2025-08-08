@@ -1,0 +1,61 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+all_rawdata_merge_non10x        1
+rawdata_merge_non10x            3
+total                           4
+
+Select jobs to execute...
+Execute 3 jobs...
+[Thu Jul 31 11:39:32 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_BoneMarrow
+    output: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata, figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:39:32 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_PeripheralBlood
+    output: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    jobid: 2
+    reason: Missing output files: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:39:32 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_Spleen
+    output: figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    jobid: 3
+    reason: Missing output files: figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_Spleen
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:40:15 2025]
+Finished jobid: 3 (Rule: rawdata_merge_non10x)
+1 of 4 steps (25%) done
+[Thu Jul 31 11:41:14 2025]
+Finished jobid: 2 (Rule: rawdata_merge_non10x)
+2 of 4 steps (50%) done
+[Thu Jul 31 11:50:24 2025]
+Finished jobid: 1 (Rule: rawdata_merge_non10x)
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Jul 31 11:50:24 2025]
+localrule all_rawdata_merge_non10x:
+    input: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    jobid: 0
+    reason: Input files updated by another job: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata, figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:50:24 2025]
+Finished jobid: 0 (Rule: all_rawdata_merge_non10x)
+4 of 4 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-31T113932.596626.snakemake.log

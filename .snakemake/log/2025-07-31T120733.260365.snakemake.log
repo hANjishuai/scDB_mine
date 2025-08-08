@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all_scRNA_Qc2Sct        1
+scRNA_Qc2Sct            4
+total                   5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Thu Jul 31 12:07:33 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Thu Jul 31 12:07:33 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Thu Jul 31 12:07:33 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Thu Jul 31 12:07:33 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Thu Jul 31 12:08:08 2025]
+Finished jobid: 3 (Rule: scRNA_Qc2Sct)
+1 of 5 steps (20%) done
+[Thu Jul 31 12:08:36 2025]
+Finished jobid: 2 (Rule: scRNA_Qc2Sct)
+2 of 5 steps (40%) done
+[Thu Jul 31 12:10:05 2025]
+Finished jobid: 4 (Rule: scRNA_Qc2Sct)
+3 of 5 steps (60%) done
+[Thu Jul 31 12:11:45 2025]
+Finished jobid: 1 (Rule: scRNA_Qc2Sct)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Jul 31 12:11:45 2025]
+localrule all_scRNA_Qc2Sct:
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    jobid: 0
+    reason: Input files updated by another job: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata, result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    resources: tmpdir=/tmp
+[Thu Jul 31 12:11:45 2025]
+Finished jobid: 0 (Rule: all_scRNA_Qc2Sct)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-31T120733.260365.snakemake.log

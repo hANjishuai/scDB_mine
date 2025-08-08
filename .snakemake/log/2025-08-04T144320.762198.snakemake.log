@@ -1,0 +1,11 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+InputFunctionException in rule SubsetCells in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 146:
+Error:
+  KeyError: 'input7'
+Wildcards:
+  tissue_all=Adult_BoneMarrow
+Traceback:
+  File "/home/test/workshop/B1/scDB_mine/Snakefile", line 148, in <lambda> (rule SubsetCells, line 155, /home/test/workshop/B1/scDB_mine/Snakefile)

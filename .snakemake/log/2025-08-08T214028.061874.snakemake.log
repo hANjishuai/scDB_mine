@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+Plot_pyscenic_R            4
+all_Plot_pyscenic_R        1
+total                      5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Fri Aug  8 21:40:28 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_BoneMarrow/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+    jobid: 1
+    reason: Missing output files: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Fri Aug  8 21:40:28 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+    jobid: 4
+    reason: Missing output files: result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds; Code has changed since last execution
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Fri Aug  8 21:40:28 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_Spleen/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_Spleen/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_Spleen/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_Spleen/rss_rankplot.rds
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Fri Aug  8 21:40:28 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_PeripheralBlood/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/rss_rankplot.rds
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Fri Aug  8 21:40:48 2025]
+Finished jobid: 1 (Rule: Plot_pyscenic_R)
+1 of 5 steps (20%) done
+[Fri Aug  8 21:40:50 2025]
+Finished jobid: 3 (Rule: Plot_pyscenic_R)
+2 of 5 steps (40%) done
+[Fri Aug  8 21:40:51 2025]
+Finished jobid: 4 (Rule: Plot_pyscenic_R)
+3 of 5 steps (60%) done
+[Fri Aug  8 21:40:52 2025]
+Finished jobid: 2 (Rule: Plot_pyscenic_R)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Fri Aug  8 21:40:52 2025]
+localrule all_Plot_pyscenic_R:
+    input: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_Spleen/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_Spleen/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+    jobid: 0
+    reason: Input files updated by another job: result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_Spleen/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_Spleen/oregulon_activity.csv
+    resources: tmpdir=/tmp
+[Fri Aug  8 21:40:52 2025]
+Finished jobid: 0 (Rule: all_Plot_pyscenic_R)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-08T214028.061874.snakemake.log

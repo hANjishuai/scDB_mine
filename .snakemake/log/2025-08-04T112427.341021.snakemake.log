@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+CellAnnoCheck            4
+all_CellAnnoCheck        1
+total                    5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug  4 11:24:27 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata
+    jobid: 1
+    reason: Missing output files: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:24:27 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:24:27 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata
+    jobid: 3
+    reason: Missing output files: figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:24:27 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 139:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmppkowhb_j.06_CellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 11:24:34 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 3
+    input: result_out/05_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 139:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp8upgick3.06_CellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 11:24:37 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 2
+    input: result_out/05_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 139:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpf1suxt7v.06_CellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 11:24:43 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 4
+    input: result_out/05_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 139:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp0hbtt4fj.06_CellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 11:24:46 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 1
+    input: result_out/05_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug  4 11:24:46 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 1
+    input: result_out/05_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata
+[Mon Aug  4 11:24:46 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 2
+    input: result_out/05_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata
+[Mon Aug  4 11:24:46 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 3
+    input: result_out/05_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata
+[Mon Aug  4 11:24:46 2025]
+Error in rule CellAnnoCheck:
+    message: None
+    jobid: 4
+    input: result_out/05_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T112427.341021.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

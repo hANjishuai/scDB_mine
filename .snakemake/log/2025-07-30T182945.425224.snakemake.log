@@ -1,0 +1,71 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+all_rawdata_merge_non10x        1
+rawdata_merge_non10x            3
+total                           4
+
+Select jobs to execute...
+Execute 3 jobs...
+[Wed Jul 30 18:29:45 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_BoneMarrow
+    output: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    jobid: 1
+    reason: Forced execution
+    wildcards: tissue_non10x=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Wed Jul 30 18:29:45 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_PeripheralBlood
+    output: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    jobid: 2
+    reason: Missing output files: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    wildcards: tissue_non10x=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Wed Jul 30 18:29:45 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_Spleen
+    output: figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata, figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf
+    wildcards: tissue_non10x=Adult_Spleen
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 47:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpbobidctq.01_rawdata_merge_non10x.R' returned non-zero exit status 1.
+[Wed Jul 30 18:30:09 2025]
+Error in rule rawdata_merge_non10x:
+    message: None
+    jobid: 3
+    input: data/Adult_Spleen
+    output: figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 47:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpj08gtf8i.01_rawdata_merge_non10x.R' returned non-zero exit status 1.
+[Wed Jul 30 18:30:25 2025]
+Error in rule rawdata_merge_non10x:
+    message: None
+    jobid: 2
+    input: data/Adult_PeripheralBlood
+    output: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+Terminating processes on user request, this might take some time.
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 47:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpmt1e74hb.01_rawdata_merge_non10x.R' returned non-zero exit status 1.
+[Wed Jul 30 18:33:43 2025]
+Error in rule rawdata_merge_non10x:
+    message: None
+    jobid: 1
+    input: data/Adult_BoneMarrow
+    output: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-30T182945.425224.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

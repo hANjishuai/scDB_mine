@@ -1,0 +1,77 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all_trans2loom        1
+trans2loom            4
+total                 5
+
+Select jobs to execute...
+
+[Wed Aug  6 08:46:10 2025]
+rule trans2loom:
+    input: result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom
+    jobid: 2
+    reason: Missing output files: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 08:46:10 2025]
+rule trans2loom:
+    input: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    jobid: 1
+    reason: Missing output files: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 08:46:10 2025]
+rule trans2loom:
+    input: result_out/10_SubcellAnnoCheck/Adult_Spleen/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom
+    jobid: 3
+    reason: Missing output files: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 08:46:10 2025]
+rule trans2loom:
+    input: result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom
+    jobid: 4
+    reason: Missing output files: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 08:46:15 2025]
+Finished job 3.
+1 of 5 steps (20%) done
+[Wed Aug  6 08:46:16 2025]
+Finished job 2.
+2 of 5 steps (40%) done
+[Wed Aug  6 08:46:17 2025]
+Finished job 1.
+3 of 5 steps (60%) done
+[Wed Aug  6 08:46:19 2025]
+Finished job 4.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Wed Aug  6 08:46:19 2025]
+localrule all_trans2loom:
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom, result_out/11_trans2loom/Adult_Spleen/loom_sce.loom, result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom
+    jobid: 0
+    reason: Input files updated by another job: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom, result_out/11_trans2loom/Adult_Spleen/loom_sce.loom, result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 08:46:19 2025]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2025-08-06T084610.542292.snakemake.log

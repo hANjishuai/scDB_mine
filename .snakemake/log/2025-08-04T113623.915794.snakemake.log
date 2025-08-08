@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+CellAnnoCheck            4
+all_CellAnnoCheck        1
+total                    5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug  4 11:36:24 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'result_out/05_CellAnno/Adult_BoneMarrow/annotation_csv.csv' now: 'result_out/05_CellAnno/Adult_BoneMarrow/annotation_check.csv' 
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:36:24 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata
+    jobid: 2
+    reason: Missing output files: figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'result_out/05_CellAnno/Adult_PeripheralBlood/annotation_csv.csv' now: 'result_out/05_CellAnno/Adult_PeripheralBlood/annotation_check.csv' 
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:36:24 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'result_out/05_CellAnno/Adult_Spleen/annotation_csv.csv' now: 'result_out/05_CellAnno/Adult_Spleen/annotation_check.csv' 
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:36:24 2025]
+localrule CellAnnoCheck:
+    input: result_out/05_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata
+    jobid: 4
+    reason: Missing output files: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'result_out/05_CellAnno/Adult_PeritonealCavity/annotation_csv.csv' now: 'result_out/05_CellAnno/Adult_PeritonealCavity/annotation_check.csv' 
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:36:36 2025]
+Finished jobid: 3 (Rule: CellAnnoCheck)
+1 of 5 steps (20%) done
+[Mon Aug  4 11:36:48 2025]
+Finished jobid: 2 (Rule: CellAnnoCheck)
+2 of 5 steps (40%) done
+[Mon Aug  4 11:37:45 2025]
+Finished jobid: 4 (Rule: CellAnnoCheck)
+3 of 5 steps (60%) done
+[Mon Aug  4 11:38:04 2025]
+Finished jobid: 1 (Rule: CellAnnoCheck)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug  4 11:38:04 2025]
+localrule all_CellAnnoCheck:
+    input: figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf, figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata
+    jobid: 0
+    reason: Input files updated by another job: figure_out/06_CellAnnoCheck/Adult_PeritonealCavity/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_Spleen/seurat_output.Rdata, result_out/06_CellAnnoCheck/Adult_PeripheralBlood/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_BoneMarrow/plot_output.pdf, figure_out/06_CellAnnoCheck/Adult_Spleen/plot_output.pdf, result_out/06_CellAnnoCheck/Adult_BoneMarrow/seurat_output.Rdata, result_out/06_CellAnnoCheck/Adult_PeritonealCavity/seurat_output.Rdata, figure_out/06_CellAnnoCheck/Adult_PeripheralBlood/plot_output.pdf
+    resources: tmpdir=/tmp
+[Mon Aug  4 11:38:04 2025]
+Finished jobid: 0 (Rule: all_CellAnnoCheck)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T113623.915794.snakemake.log

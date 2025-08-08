@@ -1,0 +1,77 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+RcisTarget            4
+all_RcisTarget        1
+total                 5
+
+Select jobs to execute...
+
+[Wed Aug  6 15:20:01 2025]
+rule RcisTarget:
+    input: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom, result_out/12_pyscenic_grn/Adult_PeripheralBlood/sce.adj.tsv
+    output: result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+    jobid: 2
+    reason: Missing output files: result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:20:01 2025]
+rule RcisTarget:
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/12_pyscenic_grn/Adult_BoneMarrow/sce.adj.tsv
+    output: result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+    jobid: 1
+    reason: Missing output files: result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:20:01 2025]
+rule RcisTarget:
+    input: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom, result_out/12_pyscenic_grn/Adult_Spleen/sce.adj.tsv
+    output: result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv
+    jobid: 3
+    reason: Missing output files: result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:20:01 2025]
+rule RcisTarget:
+    input: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom, result_out/12_pyscenic_grn/Adult_PeritonealCavity/sce.adj.tsv
+    output: result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+    jobid: 4
+    reason: Missing output files: result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 15:29:10 2025]
+Finished job 1.
+1 of 5 steps (20%) done
+[Wed Aug  6 15:29:13 2025]
+Finished job 2.
+2 of 5 steps (40%) done
+[Wed Aug  6 15:30:02 2025]
+Finished job 3.
+3 of 5 steps (60%) done
+[Wed Aug  6 15:36:35 2025]
+Finished job 4.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Wed Aug  6 15:36:35 2025]
+localrule all_RcisTarget:
+    input: result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv, result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv, result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv, result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+    jobid: 0
+    reason: Input files updated by another job: result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv, result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv, result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv, result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 15:36:35 2025]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2025-08-06T152000.779119.snakemake.log

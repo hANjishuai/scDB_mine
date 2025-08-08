@@ -1,0 +1,222 @@
+# config.yaml
+
+# 01_rawdata_merge.R
+# 组织变量
+tissue: "Adult_PeritonealCavity"
+
+input01:
+  rawdatadir: "data/{tissue}"
+
+params01:
+  projectname: "B1_{tissue}"
+  samples: ['HC_1','HC_2']
+  species: "human"
+
+output01:
+  integrated_pdf: "figure_out/01_rawdata_merge/{tissue}/integrated.pdf"
+  seurat_rdata: "result_out/01_rawdata_merge/{tissue}/seurat_raw.Rdata"
+
+# 01_rawdata_merge_non10x
+# 组织变量（Non 10X format）
+tissue_non10x: ["Adult_BoneMarrow","Adult_PeripheralBlood","Adult_Spleen"]
+
+input01_non: 
+  rawdatadir: "data/{tissue_non10x}"
+
+params01_non:
+  projectname_prefix: "B1_"
+  species: "mouse"
+
+output01_non:
+  integrated_pdf: "figure_out/01_rawdata_merge/{tissue_non10x}/integrated.pdf"
+  seurat_rdata: "result_out/01_rawdata_merge/{tissue_non10x}/seurat_raw.Rdata"
+
+# 02_scRNA_Qc2Sct
+# 所有组织变量
+tissue_all: ["Adult_BoneMarrow","Adult_PeripheralBlood","Adult_Spleen",Adult_PeritonealCavity]
+
+input02:
+  seurat_rdata: "result_out/01_rawdata_merge/{tissue_all}/seurat_raw.Rdata"
+
+params02:
+  species: "mouse"
+  nFeature_RNA_min: 100
+  nFeature_RNA_max: 4000
+  mt_max: 15
+  group_var: "orig.ident"
+  output_pdf_dir: "figure_out/02_scRNA_Qc2Sct/{tissue_all}"
+
+output02:
+  seurat_rdata: "result_out/02_scRNA_Qc2Sct/{tissue_all}/seurat_SCT.Rdata"
+
+# 03_cluster
+input03: 
+  seurat_path: "result_out/02_scRNA_Qc2Sct/{tissue_all}/seurat_SCT.Rdata"
+
+params03:
+  orig_ident: "orig.ident"
+  result_out_dir: "result_out/03_cluster/{tissue_all}"
+  figure_out_dir: "figure_out/03_cluster/{tissue_all}"
+  cluster_resolution: 0.3
+
+output03:
+  seurat_rdata: "result_out/03_cluster/{tissue_all}/seurat_cluster.Rdata"
+
+# 04_CellmarkersPlot
+input04:
+  seurat_path: "result_out/03_cluster/{tissue_all}/seurat_cluster.Rdata"
+
+params04:
+  marker_file: "db/mouse/{tissue_all}/Level1.xlsx"
+
+output04:
+  all_markers_plot: "figure_out/04_CellmarkersPlot/{tissue_all}/all_markers_plot.pdf"
+  per_celltype_plot: "figure_out/04_CellmarkersPlot/{tissue_all}/per_celltype_plot.pdf"
+
+# 05_CellAnno.R
+input05:
+  seurat_path: "result_out/03_cluster/{tissue_all}/seurat_cluster.Rdata"
+
+params05:
+  species: "mouse"
+
+output05:
+  annotation_plot: "figure_out/05_CellAnno/{tissue_all}/annotation_plot.pdf"
+  annotation_csv: "result_out/05_CellAnno/{tissue_all}/annotation_csv.csv"
+  seurat_output: "result_out/05_CellAnno/{tissue_all}/seurat_output.Rdata"
+
+# 06_CellAnnoCheck
+input06:
+  seurat_path: "result_out/05_CellAnno/{tissue_all}/seurat_output.Rdata"
+
+params06:
+  annotation_path: "result_out/05_CellAnno/{tissue_all}/annotation_check.csv"
+
+output06:
+  plot_output: "figure_out/06_CellAnnoCheck/{tissue_all}/plot_output.pdf"
+  seurat_output: "result_out/06_CellAnnoCheck/{tissue_all}/seurat_output.Rdata"
+
+# 07_SubsetCells
+input07:
+  seurat_path: "result_out/06_CellAnnoCheck/{tissue_all}/seurat_output.Rdata"
+
+params07:
+  celltype: "B cells"
+
+output07:
+  output_path: "result_out/07_SubsetCells/{tissue_all}/Sub_seurat.Rdata"
+
+# 08_Subset_SCT
+input08:
+  seurat_rdata: "result_out/07_SubsetCells/{tissue_all}/Sub_seurat.Rdata"
+
+params08:
+  nFeature_RNA_min: 5
+  nFeature_RNA_max: 2500 
+  percent_mt_max: 7.5 
+  species: "mouse"
+  dims: 12
+  figure_paths: "figure_out/08_Subset_SCT/{tissue_all}/Subsets"
+
+output08:
+  output_path: "result_out/08_Subset_SCT/{tissue_all}/Sub_seurat.Rdata"
+
+# 09_Subset_CellAnno
+input09:
+  seurat_path: "result_out/08_Subset_SCT/{tissue_all}/Sub_seurat.Rdata"
+
+params09:
+  species: "mouse"
+
+output09:
+  annotation_plot: "figure_out/09_Subset_CellAnno/{tissue_all}/annotation_plot.pdf"
+  annotation_csv: "result_out/09_Subset_CellAnno/{tissue_all}/annotation_csv.csv"
+  seurat_output: "result_out/09_Subset_CellAnno/{tissue_all}/seurat_output.Rdata"
+
+# 10_SubcellAnnoCheck
+input10:
+  seurat_path: "result_out/09_Subset_CellAnno/{tissue_all}/seurat_output.Rdata"
+
+params10:
+  cluster_path: "result_out/09_Subset_CellAnno/{tissue_all}/annotation_check.csv"
+  res_param: "1"
+  output_prefix: "result_out/10_SubcellAnnoCheck/{tissue_all}"
+
+output10:
+  seurat_rdata: "result_out/10_SubcellAnnoCheck/{tissue_all}/seurat_rdata.Rdata"
+  output_path: "figure_out/10_SubcellAnnoCheck/{tissue_all}/Dimplot.pdf"
+
+# 11_trans2loom
+input11:
+  expression: "result_out/10_SubcellAnnoCheck/{tissue_all}/loom_expression.csv"
+
+output11:
+  loom: "result_out/11_trans2loom/{tissue_all}/loom_sce.loom"
+
+# 12_pyscenic_grn
+input12:
+  loomfile: "result_out/11_trans2loom/{tissue_all}/loom_sce.loom"
+
+params12:
+  tf_list: "db/pyscenic/mouse/mm_mgi_tfs.txt"
+  num_workers: 10
+
+output12:
+  adj: "result_out/12_pyscenic_grn/{tissue_all}/sce.adj.tsv"
+
+# 13_RcisTarget
+input13:
+  loomfile: "result_out/11_trans2loom/{tissue_all}/loom_sce.loom"
+  grn_result: "result_out/12_pyscenic_grn/{tissue_all}/sce.adj.tsv"
+
+output13:
+  regulons: "result_out/13_RcisTarget/{tissue_all}/sce.regulons.csv"
+
+params13:
+  motifs: "db/pyscenic/mouse/motifs-v10nr_clust-nr.mgi-m0.001-o0.0.tbl"
+  feather:  "db/pyscenic/mouse/mm10__refseq-r80__10kb_up_and_down_tss.mc9nr.genes_vs_motifs.rankings.feather"
+  num_workers: 10
+
+# 14_aucell
+input14:  
+  loomfile: "result_out/11_trans2loom/{tissue_all}/loom_sce.loom"
+  regulons: "result_out/13_RcisTarget/{tissue_all}/sce.regulons.csv"
+
+output14:
+  Scenic_loom: "result_out/14_aucell/{tissue_all}/sce.SCENIC.loom"
+
+params14:
+  num_workers: 10
+
+# 15_Plot_pyscenic
+input15:
+  loom_path: "result_out/14_aucell/{tissue_all}/sce.SCENIC.loom"
+  seurat_path: "result_out/10_SubcellAnnoCheck/{tissue_all}/seurat_rdata.Rdata"
+
+output15:
+  seurat_res_path: "result_out/15_Plot_pyscenic/{tissue_all}/seurat_rdata.Rdata"
+
+params15:
+  celltype_col: "manual_L2"
+  group_col: "orig.ident"
+  nF_col: "nFeature_RNA"
+  nC_col: "nCount_RNA"
+  results_path: "result_out/15_Plot_pyscenic/{tissue_all}"
+
+# 16_Plot_pyscenic_R
+input16:
+  iScenic_loom: "result_out/14_aucell/{tissue_all}/sce.SCENIC.loom"
+  irss_result: "result_out/15_Plot_pyscenic/{tissue_all}/rss_all.Rdata"
+  iSeurat: "result_out/15_Plot_pyscenic/{tissue_all}/seurat_rdata.Rdata"
+  icellinfo: "result_out/10_SubcellAnnoCheck/{tissue_all}/loom_metadata.csv"
+  iRegulon: "db/pyscenic/mouse/Regulon_TFs.xls"
+
+output16:
+  oregulon_activity: "result_out/16_Plot_pyscenic_R/{tissue_all}/oregulon_activity.csv"
+  output_rank_RSS: "result_out/16_Plot_pyscenic_R/{tissue_all}/rss_rankplot.rds"
+
+params16:
+  outputs_file_dir:  "figure_out/16_Plot_pyscenic_R/{tissue_all}"
+
+
+

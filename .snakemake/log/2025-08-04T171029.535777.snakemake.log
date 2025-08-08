@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+Subset_CellAnno            4
+all_Subset_CellAnno        1
+total                      5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug  4 17:10:29 2025]
+localrule Subset_CellAnno:
+    input: result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_Spleen/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_Spleen/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/09_Subset_CellAnno/Adult_Spleen/annotation_csv.csv, figure_out/09_Subset_CellAnno/Adult_Spleen/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 17:10:29 2025]
+localrule Subset_CellAnno:
+    input: result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    jobid: 2
+    reason: Missing output files: figure_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug  4 17:10:29 2025]
+localrule Subset_CellAnno:
+    input: result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_csv.csv, figure_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_plot.pdf
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug  4 17:10:29 2025]
+localrule Subset_CellAnno:
+    input: result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    jobid: 1
+    reason: Missing output files: figure_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata, result_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_csv.csv
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 196:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpfd49b0ln.05_CellAnno.R' returned non-zero exit status 1.
+[Mon Aug  4 17:10:45 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 3
+    input: result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_Spleen/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_Spleen/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 196:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpqif5syaq.05_CellAnno.R' returned non-zero exit status 1.
+[Mon Aug  4 17:10:46 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 4
+    input: result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 196:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpe2iue9sy.05_CellAnno.R' returned non-zero exit status 1.
+[Mon Aug  4 17:10:47 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 2
+    input: result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 196:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpx7akzw35.05_CellAnno.R' returned non-zero exit status 1.
+[Mon Aug  4 17:10:48 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 1
+    input: result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug  4 17:10:48 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 3
+    input: result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_Spleen/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_Spleen/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+[Mon Aug  4 17:10:48 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 2
+    input: result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+[Mon Aug  4 17:10:48 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 4
+    input: result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+[Mon Aug  4 17:10:48 2025]
+Error in rule Subset_CellAnno:
+    message: None
+    jobid: 1
+    input: result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata
+    output: figure_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_plot.pdf, result_out/09_Subset_CellAnno/Adult_BoneMarrow/annotation_csv.csv, result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T171029.535777.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

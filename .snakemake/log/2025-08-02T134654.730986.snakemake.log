@@ -1,0 +1,59 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all_cluster        1
+cluster            4
+total              5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Sat Aug  2 13:46:54 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Sat Aug  2 13:46:54 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sat Aug  2 13:46:54 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Sat Aug  2 13:46:54 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 85:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp0sp7t5ud.03_cluster.R' returned non-zero exit status 1.
+[Sat Aug  2 13:51:30 2025]
+Error in rule cluster:
+    message: None
+    jobid: 3
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+Removing output files of failed job cluster since they might be corrupted:
+result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata

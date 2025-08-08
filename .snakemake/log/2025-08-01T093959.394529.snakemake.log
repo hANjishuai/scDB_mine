@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all_cluster        1
+cluster            4
+total              5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Fri Aug  1 09:39:59 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Fri Aug  1 09:39:59 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Fri Aug  1 09:39:59 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Fri Aug  1 09:39:59 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 85:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmplg8_k_ep.03_cluster.R' returned non-zero exit status 1.
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 2
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 85:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp8cpyus__.03_cluster.R' returned non-zero exit status 1.
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 1
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 85:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpx8_g7sqa.03_cluster.R' returned non-zero exit status 1.
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 4
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 85:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp3n9qcn3x.03_cluster.R' returned non-zero exit status 1.
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 3
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 1
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 2
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 3
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+[Fri Aug  1 09:40:03 2025]
+Error in rule cluster:
+    message: None
+    jobid: 4
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-01T093959.394529.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

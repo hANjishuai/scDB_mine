@@ -1,0 +1,39 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all_rawdata_merge        1
+rawdata_merge            1
+total                    2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jul 30 15:55:14 2025]
+localrule rawdata_merge:
+    input: pipeline/01_rawdata_merge.R
+    output: result_out/01_rawdata_merge/completed.txt
+    jobid: 1
+    reason: Missing output files: result_out/01_rawdata_merge/completed.txt
+    resources: tmpdir=/tmp
+Touching output file result_out/01_rawdata_merge/completed.txt.
+[Wed Jul 30 16:04:33 2025]
+Finished jobid: 1 (Rule: rawdata_merge)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jul 30 16:04:33 2025]
+localrule all_rawdata_merge:
+    input: result_out/01_rawdata_merge/completed.txt
+    jobid: 0
+    reason: Input files updated by another job: result_out/01_rawdata_merge/completed.txt
+    resources: tmpdir=/tmp
+[Wed Jul 30 16:04:33 2025]
+Finished jobid: 0 (Rule: all_rawdata_merge)
+2 of 2 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-30T155514.455284.snakemake.log

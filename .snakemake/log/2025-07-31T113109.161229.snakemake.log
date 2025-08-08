@@ -1,0 +1,13 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+MissingInputException in rule scRNA_Qc2Sct in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 54:
+Missing input files for rule scRNA_Qc2Sct:
+    output: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    affected files:
+        result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+        result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+        result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+        result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata

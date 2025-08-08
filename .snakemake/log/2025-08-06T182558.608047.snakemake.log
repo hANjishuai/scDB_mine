@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+Plot_pyscenic            4
+all_Plot_pyscenic        1
+total                    5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Wed Aug  6 18:25:58 2025]
+localrule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Wed Aug  6 18:25:58 2025]
+localrule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Wed Aug  6 18:25:58 2025]
+localrule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Wed Aug  6 18:25:58 2025]
+localrule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 339:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpt8e9wdrm.12_Plot_pyscenic.R' returned non-zero exit status 1.
+[Wed Aug  6 18:26:19 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 3
+    input: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 339:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp2r63k3cb.12_Plot_pyscenic.R' returned non-zero exit status 1.
+[Wed Aug  6 18:26:19 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 2
+    input: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 339:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpy5xun86r.12_Plot_pyscenic.R' returned non-zero exit status 1.
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 4
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 339:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpsqnwmnh8.12_Plot_pyscenic.R' returned non-zero exit status 1.
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 1
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 1
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 2
+    input: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 3
+    input: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+[Wed Aug  6 18:26:21 2025]
+Error in rule Plot_pyscenic:
+    message: None
+    jobid: 4
+    input: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-06T182558.608047.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

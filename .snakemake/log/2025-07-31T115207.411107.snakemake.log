@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all_scRNA_Qc2Sct        1
+scRNA_Qc2Sct            4
+total                   5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Thu Jul 31 11:52:07 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:52:07 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:52:07 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:52:07 2025]
+localrule scRNA_Qc2Sct:
+    input: result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 67:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp8xhvtwnd.02_scRNA_Qc2Sct.R' returned non-zero exit status 1.
+[Thu Jul 31 11:52:18 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 3
+    input: result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 67:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp4wkx19ss.02_scRNA_Qc2Sct.R' returned non-zero exit status 1.
+[Thu Jul 31 11:52:19 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 2
+    input: result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 67:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp55g8bg5x.02_scRNA_Qc2Sct.R' returned non-zero exit status 1.
+[Thu Jul 31 11:52:25 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 4
+    input: result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 67:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpb52bj_7c.02_scRNA_Qc2Sct.R' returned non-zero exit status 1.
+[Thu Jul 31 11:52:25 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 1
+    input: result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Thu Jul 31 11:52:26 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 1
+    input: result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+[Thu Jul 31 11:52:26 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 3
+    input: result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+[Thu Jul 31 11:52:26 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 2
+    input: result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+[Thu Jul 31 11:52:26 2025]
+Error in rule scRNA_Qc2Sct:
+    message: None
+    jobid: 4
+    input: result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+    output: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-31T115207.411107.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

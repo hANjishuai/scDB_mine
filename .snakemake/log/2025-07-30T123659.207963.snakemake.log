@@ -1,0 +1,43 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all_rawdata_merge        1
+rawdata_merge            1
+total                    2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Jul 30 12:36:59 2025]
+localrule rawdata_merge:
+    input: pipeline/01_rawdata_merge.R
+    output: result_out/01_rawdata_merge/completed.txt
+    jobid: 1
+    reason: Missing output files: result_out/01_rawdata_merge/completed.txt
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 26:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpalk7oo5_.01_rawdata_merge.R' returned non-zero exit status 1.
+[Wed Jul 30 12:37:03 2025]
+Error in rule rawdata_merge:
+    message: None
+    jobid: 1
+    input: pipeline/01_rawdata_merge.R
+    output: result_out/01_rawdata_merge/completed.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Wed Jul 30 12:37:03 2025]
+Error in rule rawdata_merge:
+    message: None
+    jobid: 1
+    input: pipeline/01_rawdata_merge.R
+    output: result_out/01_rawdata_merge/completed.txt
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-07-30T123659.207963.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

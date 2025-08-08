@@ -1,0 +1,57 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all_pyscenic_grn        1
+pyscenic_grn            4
+total                   5
+
+Select jobs to execute...
+
+[Wed Aug  6 10:05:53 2025]
+rule pyscenic_grn:
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    output: result_out/12_pyscenic_grn/Adult_BoneMarrow/sce.adj.tsv
+    jobid: 1
+    reason: Missing output files: result_out/12_pyscenic_grn/Adult_BoneMarrow/sce.adj.tsv; Code has changed since last execution; Params have changed since last execution
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 10:05:53 2025]
+rule pyscenic_grn:
+    input: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom
+    output: result_out/12_pyscenic_grn/Adult_Spleen/sce.adj.tsv
+    jobid: 3
+    reason: Code has changed since last execution; Params have changed since last execution
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 10:05:53 2025]
+rule pyscenic_grn:
+    input: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom
+    output: result_out/12_pyscenic_grn/Adult_PeripheralBlood/sce.adj.tsv
+    jobid: 2
+    reason: Code has changed since last execution; Params have changed since last execution
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 10:05:53 2025]
+rule pyscenic_grn:
+    input: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom
+    output: result_out/12_pyscenic_grn/Adult_PeritonealCavity/sce.adj.tsv
+    jobid: 4
+    reason: Code has changed since last execution; Params have changed since last execution
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 10:10:17 2025]
+Finished job 3.
+1 of 5 steps (20%) done
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

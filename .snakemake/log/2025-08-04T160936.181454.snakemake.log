@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+Subset_SCT            4
+all_Subset_SCT        1
+total                 5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug  4 16:09:36 2025]
+localrule Subset_SCT:
+    input: result_out/07_SubsetCells/Adult_BoneMarrow/Sub_seurat.Rdata
+    output: result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug  4 16:09:36 2025]
+localrule Subset_SCT:
+    input: result_out/07_SubsetCells/Adult_PeripheralBlood/Sub_seurat.Rdata
+    output: result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug  4 16:09:36 2025]
+localrule Subset_SCT:
+    input: result_out/07_SubsetCells/Adult_PeritonealCavity/Sub_seurat.Rdata
+    output: result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug  4 16:09:36 2025]
+localrule Subset_SCT:
+    input: result_out/07_SubsetCells/Adult_Spleen/Sub_seurat.Rdata
+    output: result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 16:10:09 2025]
+Finished jobid: 3 (Rule: Subset_SCT)
+1 of 5 steps (20%) done
+[Mon Aug  4 16:10:12 2025]
+Finished jobid: 2 (Rule: Subset_SCT)
+2 of 5 steps (40%) done
+[Mon Aug  4 16:10:12 2025]
+Finished jobid: 4 (Rule: Subset_SCT)
+3 of 5 steps (60%) done
+[Mon Aug  4 16:10:13 2025]
+Finished jobid: 1 (Rule: Subset_SCT)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug  4 16:10:13 2025]
+localrule all_Subset_SCT:
+    input: result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata
+    jobid: 0
+    reason: Input files updated by another job: result_out/08_Subset_SCT/Adult_PeripheralBlood/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_Spleen/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_PeritonealCavity/Sub_seurat.Rdata, result_out/08_Subset_SCT/Adult_BoneMarrow/Sub_seurat.Rdata
+    resources: tmpdir=/tmp
+[Mon Aug  4 16:10:13 2025]
+Finished jobid: 0 (Rule: all_Subset_SCT)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T160936.181454.snakemake.log

@@ -1,0 +1,68 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all_scRNA_Qc2Sct            1
+rawdata_merge_non10x        4
+scRNA_Qc2Sct                4
+total                       9
+
+Select jobs to execute...
+Execute 4 jobs...
+[Thu Jul 31 11:23:53 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_BoneMarrow
+    output: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata
+    jobid: 2
+    reason: Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:23:53 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_PeritonealCavity
+    output: figure_out/01_rawdata_merge/Adult_PeritonealCavity/integrated.pdf, result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+    jobid: 8
+    reason: Code has changed since last execution
+    wildcards: tissue_non10x=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:23:53 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_Spleen
+    output: figure_out/01_rawdata_merge/Adult_Spleen/integrated.pdf, result_out/01_rawdata_merge/Adult_Spleen/seurat_raw.Rdata
+    jobid: 6
+    reason: Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_Spleen
+    resources: tmpdir=/tmp
+[Thu Jul 31 11:23:53 2025]
+localrule rawdata_merge_non10x:
+    input: data/Adult_PeripheralBlood
+    output: figure_out/01_rawdata_merge/Adult_PeripheralBlood/integrated.pdf, result_out/01_rawdata_merge/Adult_PeripheralBlood/seurat_raw.Rdata
+    jobid: 4
+    reason: Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: 'human' now: 'mouse' 
+    wildcards: tissue_non10x=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 47:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpuq8q_pr3.01_rawdata_merge_non10x.R' returned non-zero exit status 1.
+[Thu Jul 31 11:24:08 2025]
+Error in rule rawdata_merge_non10x:
+    message: None
+    jobid: 8
+    input: data/Adult_PeritonealCavity
+    output: figure_out/01_rawdata_merge/Adult_PeritonealCavity/integrated.pdf, result_out/01_rawdata_merge/Adult_PeritonealCavity/seurat_raw.Rdata
+Terminating processes on user request, this might take some time.
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 47:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp_czp0w9d.01_rawdata_merge_non10x.R' returned non-zero exit status 1.
+[Thu Jul 31 11:24:18 2025]
+Error in rule rawdata_merge_non10x:
+    message: None
+    jobid: 2
+    input: data/Adult_BoneMarrow
+    output: figure_out/01_rawdata_merge/Adult_BoneMarrow/integrated.pdf, result_out/01_rawdata_merge/Adult_BoneMarrow/seurat_raw.Rdata

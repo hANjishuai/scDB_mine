@@ -1,0 +1,39 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+CellmarkersPlot            1
+all_CellmarkersPlot        1
+total                      2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug  4 10:07:46 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    output: figure_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf
+    jobid: 3
+    reason: Missing output files: figure_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 10:07:56 2025]
+Finished jobid: 3 (Rule: CellmarkersPlot)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug  4 10:07:56 2025]
+localrule all_CellmarkersPlot:
+    input: figure_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_PeripheralBlood/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf, figure_out/04_CellmarkersPlot/Adult_PeripheralBlood/per_celltype_plot.pdf, figure_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf, figure_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    jobid: 0
+    reason: Input files updated by another job: figure_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, figure_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf
+    resources: tmpdir=/tmp
+[Mon Aug  4 10:07:56 2025]
+Finished jobid: 0 (Rule: all_CellmarkersPlot)
+2 of 2 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T100746.592999.snakemake.log

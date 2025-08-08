@@ -1,0 +1,93 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+CellmarkersPlot            4
+all_CellmarkersPlot        1
+total                      5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Sat Aug  2 16:01:51 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+    jobid: 1
+    reason: Missing output files: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:01:51 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    jobid: 4
+    reason: Missing output files: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:01:51 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_PeripheralBlood/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeripheralBlood/per_celltype_plot.pdf
+    jobid: 2
+    reason: Missing output files: result_out/04_CellmarkersPlot/Adult_PeripheralBlood/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeripheralBlood/per_celltype_plot.pdf
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:01:51 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:02:03 2025]
+Finished jobid: 3 (Rule: CellmarkersPlot)
+1 of 5 steps (20%) done
+[Sat Aug  2 16:02:03 2025]
+Finished jobid: 2 (Rule: CellmarkersPlot)
+2 of 5 steps (40%) done
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 103:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp9xnkw4o_.04_CellmarkersPlot.R' returned non-zero exit status 1.
+[Sat Aug  2 16:02:11 2025]
+Error in rule CellmarkersPlot:
+    message: None
+    jobid: 4
+    input: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+Removing output files of failed job CellmarkersPlot since they might be corrupted:
+result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 103:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpq779b010.04_CellmarkersPlot.R' returned non-zero exit status 1.
+[Sat Aug  2 16:02:15 2025]
+Error in rule CellmarkersPlot:
+    message: None
+    jobid: 1
+    input: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+Removing output files of failed job CellmarkersPlot since they might be corrupted:
+result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sat Aug  2 16:02:15 2025]
+Error in rule CellmarkersPlot:
+    message: None
+    jobid: 4
+    input: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+[Sat Aug  2 16:02:15 2025]
+Error in rule CellmarkersPlot:
+    message: None
+    jobid: 1
+    input: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-02T160151.230077.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all_cluster        1
+cluster            4
+total              5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Sat Aug  2 14:27:06 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_BoneMarrow/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sat Aug  2 14:27:06 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeripheralBlood/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Sat Aug  2 14:27:06 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_Spleen/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Sat Aug  2 14:27:06 2025]
+localrule cluster:
+    input: result_out/02_scRNA_Qc2Sct/Adult_PeritonealCavity/seurat_SCT.Rdata
+    output: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Sat Aug  2 14:31:20 2025]
+Finished jobid: 3 (Rule: cluster)
+1 of 5 steps (20%) done
+[Sat Aug  2 14:41:13 2025]
+Finished jobid: 2 (Rule: cluster)
+2 of 5 steps (40%) done
+[Sat Aug  2 15:05:36 2025]
+Finished jobid: 4 (Rule: cluster)
+3 of 5 steps (60%) done
+[Sat Aug  2 15:49:05 2025]
+Finished jobid: 1 (Rule: cluster)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Aug  2 15:49:05 2025]
+localrule all_cluster:
+    input: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata, result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata, result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata, result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    jobid: 0
+    reason: Input files updated by another job: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata, result_out/03_cluster/Adult_Spleen/seurat_cluster.Rdata, result_out/03_cluster/Adult_PeripheralBlood/seurat_cluster.Rdata, result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    resources: tmpdir=/tmp
+[Sat Aug  2 15:49:05 2025]
+Finished jobid: 0 (Rule: all_cluster)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-02T142706.705200.snakemake.log

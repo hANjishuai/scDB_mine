@@ -1,0 +1,50 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+CellmarkersPlot            2
+all_CellmarkersPlot        1
+total                      3
+
+Select jobs to execute...
+Execute 2 jobs...
+[Sat Aug  2 16:22:48 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_BoneMarrow/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf
+    jobid: 1
+    reason: Missing output files: result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:22:48 2025]
+localrule CellmarkersPlot:
+    input: result_out/03_cluster/Adult_PeritonealCavity/seurat_cluster.Rdata
+    output: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    jobid: 4
+    reason: Missing output files: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:23:13 2025]
+Finished jobid: 4 (Rule: CellmarkersPlot)
+1 of 3 steps (33%) done
+[Sat Aug  2 16:23:16 2025]
+Finished jobid: 1 (Rule: CellmarkersPlot)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Aug  2 16:23:16 2025]
+localrule all_CellmarkersPlot:
+    input: result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeripheralBlood/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_Spleen/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeripheralBlood/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_Spleen/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    jobid: 0
+    reason: Input files updated by another job: result_out/04_CellmarkersPlot/Adult_PeritonealCavity/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/per_celltype_plot.pdf, result_out/04_CellmarkersPlot/Adult_BoneMarrow/all_markers_plot.pdf, result_out/04_CellmarkersPlot/Adult_PeritonealCavity/per_celltype_plot.pdf
+    resources: tmpdir=/tmp
+[Sat Aug  2 16:23:16 2025]
+Finished jobid: 0 (Rule: all_CellmarkersPlot)
+3 of 3 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-02T162248.558325.snakemake.log

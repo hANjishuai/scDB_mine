@@ -1,0 +1,99 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all_aucell        1
+aucell            4
+total             5
+
+Select jobs to execute...
+
+[Wed Aug  6 15:59:05 2025]
+rule aucell:
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+    output: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    jobid: 1
+    reason: Missing output files: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:59:05 2025]
+rule aucell:
+    input: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom, result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv
+    output: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom
+    jobid: 3
+    reason: Missing output files: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:59:05 2025]
+rule aucell:
+    input: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom, result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+    output: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom
+    jobid: 2
+    reason: Missing output files: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+
+
+[Wed Aug  6 15:59:05 2025]
+rule aucell:
+    input: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom, result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+    output: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom
+    jobid: 4
+    reason: Missing output files: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+
+[Wed Aug  6 15:59:09 2025]
+Error in rule aucell:
+    jobid: 3
+    input: result_out/11_trans2loom/Adult_Spleen/loom_sce.loom, result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv
+    output: result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom
+    shell:
+        
+        pyscenic aucell             --num_workers {'num_workers': 10}             --output result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom             result_out/11_trans2loom/Adult_Spleen/loom_sce.loom             result_out/13_RcisTarget/Adult_Spleen/sce.regulons.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Aug  6 15:59:09 2025]
+Error in rule aucell:
+    jobid: 1
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+    output: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    shell:
+        
+        pyscenic aucell             --num_workers {'num_workers': 10}             --output result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom             result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom             result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Aug  6 15:59:09 2025]
+Error in rule aucell:
+    jobid: 4
+    input: result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom, result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+    output: result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom
+    shell:
+        
+        pyscenic aucell             --num_workers {'num_workers': 10}             --output result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom             result_out/11_trans2loom/Adult_PeritonealCavity/loom_sce.loom             result_out/13_RcisTarget/Adult_PeritonealCavity/sce.regulons.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Aug  6 15:59:09 2025]
+Error in rule aucell:
+    jobid: 2
+    input: result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom, result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+    output: result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom
+    shell:
+        
+        pyscenic aucell             --num_workers {'num_workers': 10}             --output result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom             result_out/11_trans2loom/Adult_PeripheralBlood/loom_sce.loom             result_out/13_RcisTarget/Adult_PeripheralBlood/sce.regulons.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-08-06T155905.458792.snakemake.log

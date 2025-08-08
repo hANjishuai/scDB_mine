@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in rule pyscenic_grn in file /home/test/workshop/B1/scDB_mine/Snakefile, line 238:
+Error:
+  AttributeError: 'NoneType' object has no attribute 'format'
+Wildcards:
+  tissue_all=Adult_BoneMarrow
+Traceback:
+  File "/home/test/workshop/B1/scDB_mine/Snakefile", line 240, in <lambda>

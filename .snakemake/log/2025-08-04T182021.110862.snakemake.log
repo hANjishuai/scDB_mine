@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+SubcellAnnoCheck            4
+all_SubcellAnnoCheck        1
+total                       5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug  4 18:20:21 2025]
+localrule SubcellAnnoCheck:
+    input: result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/Dimplot.pdf
+    jobid: 2
+    reason: Missing output files: result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/Dimplot.pdf
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug  4 18:20:21 2025]
+localrule SubcellAnnoCheck:
+    input: result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_Spleen/Dimplot.pdf
+    jobid: 3
+    reason: Missing output files: result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_Spleen/Dimplot.pdf
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug  4 18:20:21 2025]
+localrule SubcellAnnoCheck:
+    input: result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/Dimplot.pdf
+    jobid: 1
+    reason: Missing output files: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/Dimplot.pdf
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug  4 18:20:21 2025]
+localrule SubcellAnnoCheck:
+    input: result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/Dimplot.pdf
+    jobid: 4
+    reason: Missing output files: result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/Dimplot.pdf, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 218:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmprvn32k4y.10_SubcellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 18:20:25 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 1
+    input: result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/Dimplot.pdf
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 218:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpnhuiq7o2.10_SubcellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 18:20:25 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 2
+    input: result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/Dimplot.pdf
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 218:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmph2nads4n.10_SubcellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 18:20:25 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 3
+    input: result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_Spleen/Dimplot.pdf
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 218:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpgty4hxga.10_SubcellAnnoCheck.R' returned non-zero exit status 1.
+[Mon Aug  4 18:20:26 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 4
+    input: result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/Dimplot.pdf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug  4 18:20:26 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 2
+    input: result_out/09_Subset_CellAnno/Adult_PeripheralBlood/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeripheralBlood/Dimplot.pdf
+[Mon Aug  4 18:20:26 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 3
+    input: result_out/09_Subset_CellAnno/Adult_Spleen/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_Spleen/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_Spleen/Dimplot.pdf
+[Mon Aug  4 18:20:26 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 4
+    input: result_out/09_Subset_CellAnno/Adult_PeritonealCavity/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_PeritonealCavity/Dimplot.pdf
+[Mon Aug  4 18:20:26 2025]
+Error in rule SubcellAnnoCheck:
+    message: None
+    jobid: 1
+    input: result_out/09_Subset_CellAnno/Adult_BoneMarrow/seurat_output.Rdata
+    output: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/Dimplot.pdf
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-04T182021.110862.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
