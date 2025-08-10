@@ -1,0 +1,97 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+Enrichment            4
+all_Enrichment        1
+total                 5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Sun Aug 10 19:50:19 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Sun Aug 10 19:50:19 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sun Aug 10 19:50:19 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Sun Aug 10 19:50:19 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+Waiting at most 5 seconds for missing files:
+result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata (missing locally)
+MissingOutputException in rule Enrichment in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 370:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata (missing locally)
+MissingOutputException in rule Enrichment in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 370:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata (missing locally)
+MissingOutputException in rule Enrichment in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 370:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata (missing locally)
+MissingOutputException in rule Enrichment in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 370:
+Job 4  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sun Aug 10 19:50:49 2025]
+Error in rule Enrichment:
+    message: None
+    jobid: 4
+    input: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+[Sun Aug 10 19:50:49 2025]
+Error in rule Enrichment:
+    message: None
+    jobid: 2
+    input: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+[Sun Aug 10 19:50:49 2025]
+Error in rule Enrichment:
+    message: None
+    jobid: 1
+    input: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+[Sun Aug 10 19:50:49 2025]
+Error in rule Enrichment:
+    message: None
+    jobid: 3
+    input: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-10T195018.834187.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -218,5 +218,18 @@ output16:
 params16:
   outputs_file_dir:  "figure_out/16_Plot_pyscenic_R/{tissue_all}"
 
+# 17_Enrichment
+input17:
+  iSeurat: "result_out/15_Plot_pyscenic/{tissue_all}/seurat_rdata.Rdata"
+
+output17:
+  rds_output: "result_out/17_Enrichment/{tissue_all}/seurat_rdata.Rdata"
+
+params17:
+  iRegulon: "db/pyscenic/mouse/Regulon_TFs.xls"
+  pidents: "manual_L2"
+  outputs_file_dir: "result_out/17_Enrichment/{tissue_all}"
+  figure_dir: "figure_out/17_Enrichment/{tissue_all}"
+#  ocolor_palette: "result_out/17_Enrichment/{tissue_all}"
 
 

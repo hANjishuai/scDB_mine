@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+Enrichment            4
+all_Enrichment        1
+total                 5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Sun Aug 10 20:53:25 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    jobid: 4
+    reason: Missing output files: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Sun Aug 10 20:53:25 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Sun Aug 10 20:53:25 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    jobid: 3
+    reason: Missing output files: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Sun Aug 10 20:53:25 2025]
+localrule Enrichment:
+    input: result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    jobid: 2
+    reason: Missing output files: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Sun Aug 10 20:55:23 2025]
+Finished jobid: 3 (Rule: Enrichment)
+1 of 5 steps (20%) done
+[Sun Aug 10 20:55:38 2025]
+Finished jobid: 4 (Rule: Enrichment)
+2 of 5 steps (40%) done
+[Sun Aug 10 20:56:01 2025]
+Finished jobid: 2 (Rule: Enrichment)
+3 of 5 steps (60%) done
+[Sun Aug 10 20:56:03 2025]
+Finished jobid: 1 (Rule: Enrichment)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Aug 10 20:56:03 2025]
+localrule all_Enrichment:
+    input: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    jobid: 0
+    reason: Input files updated by another job: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata, result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    resources: tmpdir=/tmp
+[Sun Aug 10 20:56:03 2025]
+Finished jobid: 0 (Rule: all_Enrichment)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-10T205325.449335.snakemake.log

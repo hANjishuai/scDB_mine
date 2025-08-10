@@ -337,30 +337,52 @@ tissue_all = config["tissue_all"]
 #
 #    script:
 #        "pipeline/12_Plot_pyscenic.R"
+#
+## pyscenic绘图
+#rule all_Plot_pyscenic_R:
+#    input:
+#        expand(config["output16"]["oregulon_activity"],tissue_all=tissue_all),
+#        expand(config["output16"]["output_rank_RSS"],tissue_all=tissue_all)
+#    
+#rule Plot_pyscenic_R:
+#    input:
+#        iScenic_loom = lambda wildcards: config["input16"]["iScenic_loom"].format(tissue_all=wildcards.tissue_all),
+#        irss_result = lambda wildcards: config["input16"]["irss_result"].format(tissue_all=wildcards.tissue_all),
+#        iSeurat = lambda wildcards: config["input16"]["iSeurat"].format(tissue_all=wildcards.tissue_all),
+#        icellinfo = lambda wildcards: config["input16"]["icellinfo"].format(tissue_all=wildcards.tissue_all),
+#        iRegulon = config["input16"]["iRegulon"]
+#
+#    output:
+#        oregulon_activity = config["output16"]["oregulon_activity"],
+#        output_rank_RSS = config["output16"]["output_rank_RSS"]
+#
+#    params:
+#        outputs_file_dir = lambda wildcards: config["params16"]["outputs_file_dir"].format(tissue_all=wildcards.tissue_all),
+#
+#    script:
+#        "pipeline/13_Plot_TF_rss.R"
 
-# pyscenic绘图
-rule all_Plot_pyscenic_R:
+# 功能注释
+rule all_Enrichment:
     input:
-        expand(config["output16"]["oregulon_activity"],tissue_all=tissue_all),
-        expand(config["output16"]["output_rank_RSS"],tissue_all=tissue_all)
-    
-rule Plot_pyscenic_R:
+        expand(config['output17']["rds_output"],tissue_all=tissue_all)
+
+rule Enrichment:
     input:
-        iScenic_loom = lambda wildcards: config["input16"]["iScenic_loom"].format(tissue_all=wildcards.tissue_all),
-        irss_result = lambda wildcards: config["input16"]["irss_result"].format(tissue_all=wildcards.tissue_all),
-        iSeurat = lambda wildcards: config["input16"]["iSeurat"].format(tissue_all=wildcards.tissue_all),
-        icellinfo = lambda wildcards: config["input16"]["icellinfo"].format(tissue_all=wildcards.tissue_all),
-        iRegulon = config["input16"]["iRegulon"]
+        iSeurat = lambda wildcards: config["input17"]["iSeurat"].format(tissue_all=wildcards.tissue_all)
 
     output:
-        oregulon_activity = config["output16"]["oregulon_activity"],
-        output_rank_RSS = config["output16"]["output_rank_RSS"]
-
+        rds_output = config['output17']["rds_output"]
+        
     params:
-        outputs_file_dir = lambda wildcards: config["params16"]["outputs_file_dir"].format(tissue_all=wildcards.tissue_all),
+        iRegulon = config['params17']['iRegulon'],
+        pidents = config['params17']['pidents'],
+        outputs_file_dir = lambda wildcards: config['params17']['outputs_file_dir'].format(tissue_all=wildcards.tissue_all),
+#        ocolor_palette = lambda wildcards: config['params17']['ocolor_palette'].format(tissue_all=wildcards.tissue_all),
+        figure_dir = lambda wildcards: config['params17']['figure_dir'].format(tissue_all=wildcards.tissue_all)
 
     script:
-        "pipeline/13_Plot_TF_rss.R"
+        "pipeline/14_Enrichment.R"
 
 
 
