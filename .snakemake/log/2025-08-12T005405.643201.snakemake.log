@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+Plot_monocle            4
+all_Plot_monocle        1
+total                   5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Aug 12 00:54:06 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:54:06 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:54:06 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:54:06 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:54:20 2025]
+Finished jobid: 2 (Rule: Plot_monocle)
+1 of 5 steps (20%) done
+[Tue Aug 12 00:54:22 2025]
+Finished jobid: 1 (Rule: Plot_monocle)
+2 of 5 steps (40%) done
+[Tue Aug 12 00:54:22 2025]
+Finished jobid: 4 (Rule: Plot_monocle)
+3 of 5 steps (60%) done
+[Tue Aug 12 00:54:23 2025]
+Finished jobid: 3 (Rule: Plot_monocle)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Aug 12 00:54:23 2025]
+localrule all_Plot_monocle:
+    input: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+    jobid: 0
+    reason: Input files updated by another job: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:54:23 2025]
+Finished jobid: 0 (Rule: all_Plot_monocle)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-12T005405.643201.snakemake.log

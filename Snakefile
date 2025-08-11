@@ -217,7 +217,7 @@ tissue_all = config["tissue_all"]
 #    script:
 #        "pipeline/10_SubcellAnnoCheck.R"
 #
-## 生成loom文件
+# 生成loom文件
 #rule all_trans2loom:
 #    input:
 #        expand(config['output11']['loom'],tissue_all=tissue_all)
@@ -361,28 +361,109 @@ tissue_all = config["tissue_all"]
 #
 #    script:
 #        "pipeline/13_Plot_TF_rss.R"
+#
+## 功能注释
+#rule all_Enrichment:
+#    input:
+#        expand(config['output17']["rds_output"],tissue_all=tissue_all)
+#
+#rule Enrichment:
+#    input:
+#        iSeurat = lambda wildcards: config["input17"]["iSeurat"].format(tissue_all=wildcards.tissue_all)
+#
+#    output:
+#        rds_output = config['output17']["rds_output"]
+#        
+#    params:
+#        iRegulon = config['params17']['iRegulon'],
+#        pidents = config['params17']['pidents'],
+#        outputs_file_dir = lambda wildcards: config['params17']['outputs_file_dir'].format(tissue_all=wildcards.tissue_all),
+##        ocolor_palette = lambda wildcards: config['params17']['ocolor_palette'].format(tissue_all=wildcards.tissue_all),
+#        figure_dir = lambda wildcards: config['params17']['figure_dir'].format(tissue_all=wildcards.tissue_all)
+#
+#    script:
+#        "pipeline/14_Enrichment.R"
+#
+## monocle2
+#rule all_monocle2:
+#    input:
+#        expand(config["output18"]["oseuratdata"],tissue_all=tissue_all),
+#        expand(config["output18"]["otrain_monocle_DEG_df"],tissue_all=tissue_all),
+#        expand(config["output18"]["oplot_ordering_genes"],tissue_all=tissue_all),
+#        expand(config["output18"]["ocds"],tissue_all=tissue_all)
+#
+#rule monocle2:
+#    input:
+#        iSeurat_sub = lambda wildcards: config["input18"]["iSeurat_sub"].format(tissue_all=wildcards.tissue_all)
+#    output:
+#        oseuratdata = config["output18"]["oseuratdata"],
+#        otrain_monocle_DEG_df = config["output18"]["otrain_monocle_DEG_df"],
+#        oplot_ordering_genes = config["output18"]["oplot_ordering_genes"],
+#        ocds = config["output18"]["ocds"]
+#    params:
+#        pmetadat_col = config['params18']["pmetadat_col"],
+#        pcelltype = config['params18']['pcelltype'],
+#        pselected_celltype = lambda wildcards: config["params18"]["pselected_celltype"].format(tissue_all=wildcards.tissue_all)
+#    script:
+#        "pipeline/15_monocle2.R"
+#
+## pre-plot monocle 
+#rule all_pre_Plot_monocle:
+#    input:
+#        expand(config["output19"]["ocds_DGT_pseudotimegenes"],tissue_all=tissue_all),
+#        expand(config["output19"]["ostates_de"],tissue_all=tissue_all),
+#        expand(config["output19"]["oBEAM_res_list"],tissue_all=tissue_all),
+#        expand(config["output19"]["otopn"],tissue_all=tissue_all),
+#        expand(config["output19"]["oplot_monocle2_trajectory_State"],tissue_all=tissue_all),
+#        expand(config["output19"]["oplot_monocle2_density"],tissue_all=tissue_all)
+#
+#rule pre_Plot_monocle:
+#    input:
+#        icds = lambda wildcards: config["input19"]["icds"].format(tissue_all=wildcards.tissue_all),
+#        iseu = lambda wildcards: config["input19"]["iseu"].format(tissue_all=wildcards.tissue_all),
+#        igenes = lambda wildcards: config["input19"]["igenes"].format(tissue_all=wildcards.tissue_all)
+#    
+#    output:
+#        ocds_DGT_pseudotimegenes = config["output19"]["ocds_DGT_pseudotimegenes"],
+#        ostates_de = config["output19"]["ostates_de"],
+#        oBEAM_res_list = config["output19"]["oBEAM_res_list"],
+#        otopn = config["output19"]["otopn"],
+#        oplot_monocle2_trajectory_State = config["output19"]["oplot_monocle2_trajectory_State"],
+#        oplot_monocle2_density = config["output19"]["oplot_monocle2_density"]
+#
+#    params:
+#        pmetadat_col = config['params19']["pmetadat_col"]
+#
+#    script:
+#        "pipeline/16_pre_Plot_monocle.R"
 
-# 功能注释
-rule all_Enrichment:
+# plot monocle 
+rule all_Plot_monocle:
     input:
-        expand(config['output17']["rds_output"],tissue_all=tissue_all)
+        expand(config["output20"]["oGenexpress_changes_over_pseudotime"],tissue_all=tissue_all),
+#        expand(config["output20"]["owrap_plots"],tissue_all=tissue_all),
+        expand(config["output20"]["oplot_pseudotimeHeatmap"],tissue_all=tissue_all),
+        expand(config["output20"]["oplots_listn_RDS"],tissue_all=tissue_all)
 
-rule Enrichment:
+rule Plot_monocle:
     input:
-        iSeurat = lambda wildcards: config["input17"]["iSeurat"].format(tissue_all=wildcards.tissue_all)
+        icds = lambda wildcards: config["input20"]["icds"].format(tissue_all=wildcards.tissue_all),
+        iseu = lambda wildcards: config["input20"]["iseu"].format(tissue_all=wildcards.tissue_all),
+        igenes = lambda wildcards: config["input20"]["igenes"].format(tissue_all=wildcards.tissue_all), 
+        itopn = lambda wildcards: config["input20"]["itopn"].format(tissue_all=wildcards.tissue_all),
+        istates_de = lambda wildcards: config["input20"]["istates_de"].format(tissue_all=wildcards.tissue_all),
+        iBEAM_res_list = lambda wildcards: config["input20"]["iBEAM_res_list"].format(tissue_all=wildcards.tissue_all)
 
     output:
-        rds_output = config['output17']["rds_output"]
-        
+        oGenexpress_changes_over_pseudotime = config["output20"]["oGenexpress_changes_over_pseudotime"],
+#        owrap_plots = config["output20"]["owrap_plots"],
+        oplot_pseudotimeHeatmap = config["output20"]["oplot_pseudotimeHeatmap"],
+        oplots_listn_RDS = config["output20"]["oplots_listn_RDS"]
+
     params:
-        iRegulon = config['params17']['iRegulon'],
-        pidents = config['params17']['pidents'],
-        outputs_file_dir = lambda wildcards: config['params17']['outputs_file_dir'].format(tissue_all=wildcards.tissue_all),
-#        ocolor_palette = lambda wildcards: config['params17']['ocolor_palette'].format(tissue_all=wildcards.tissue_all),
-        figure_dir = lambda wildcards: config['params17']['figure_dir'].format(tissue_all=wildcards.tissue_all)
+        pmetadat_col = config["params20"]["pmetadat_col"],
+        poutdir = config["params20"]["poutdir"],
+        pgemt_list_path = config["params20"]["pgemt_list_path"]     
 
     script:
-        "pipeline/14_Enrichment.R"
-
-
-
+        "pipeline/17_Plot_monocle.R"

@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all_aucell        1
+aucell            1
+total             2
+
+Select jobs to execute...
+
+[Mon Aug 11 16:44:42 2025]
+rule aucell:
+    input: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom, result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv
+    output: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    jobid: 1
+    reason: Missing output files: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+[Mon Aug 11 16:45:15 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Mon Aug 11 16:45:15 2025]
+localrule all_aucell:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/14_aucell/Adult_PeripheralBlood/sce.SCENIC.loom, result_out/14_aucell/Adult_Spleen/sce.SCENIC.loom, result_out/14_aucell/Adult_PeritonealCavity/sce.SCENIC.loom
+    jobid: 0
+    reason: Input files updated by another job: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    resources: tmpdir=/tmp
+
+[Mon Aug 11 16:45:15 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-08-11T164442.184800.snakemake.log

@@ -1,0 +1,39 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+Plot_pyscenic_R            1
+all_Plot_pyscenic_R        1
+total                      2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 16:50:18 2025]
+localrule Plot_pyscenic_R:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/15_Plot_pyscenic/Adult_BoneMarrow/rss_all.Rdata, result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_metadata.csv, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds
+    jobid: 1
+    reason: Missing output files: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug 11 16:50:38 2025]
+Finished jobid: 1 (Rule: Plot_pyscenic_R)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 16:50:38 2025]
+localrule all_Plot_pyscenic_R:
+    input: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_Spleen/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/oregulon_activity.csv, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeripheralBlood/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_Spleen/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_PeritonealCavity/rss_rankplot.rds
+    jobid: 0
+    reason: Input files updated by another job: result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/rss_rankplot.rds, result_out/16_Plot_pyscenic_R/Adult_BoneMarrow/oregulon_activity.csv
+    resources: tmpdir=/tmp
+[Mon Aug 11 16:50:38 2025]
+Finished jobid: 0 (Rule: all_Plot_pyscenic_R)
+2 of 2 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T165018.607757.snakemake.log

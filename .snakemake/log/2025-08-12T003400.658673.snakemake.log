@@ -1,0 +1,105 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+Plot_monocle            4
+all_Plot_monocle        1
+total                   5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Aug 12 00:34:00 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+    jobid: 1
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:34:00 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+    jobid: 2
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_PeripheralBlood/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:34:00 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+    jobid: 3
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_Spleen/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:34:00 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+    jobid: 4
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+Waiting at most 5 seconds for missing files:
+figure_out/20_Plot_monocle/Adult_PeripheralBlood/owrap_plots.pdf (missing locally)
+MissingOutputException in rule Plot_monocle in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 448:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+figure_out/20_Plot_monocle/Adult_PeripheralBlood/owrap_plots.pdf (missing locally, parent dir contents: oplots_listn_RDS.rds, node_1.pdf, oplot_pseudotimeHeatmap.pdf, oGenexpress_changes_over_pseudotime.pdf)
+Removing output files of failed job Plot_monocle since they might be corrupted:
+figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+Waiting at most 5 seconds for missing files:
+figure_out/20_Plot_monocle/Adult_BoneMarrow/owrap_plots.pdf (missing locally)
+MissingOutputException in rule Plot_monocle in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 448:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+figure_out/20_Plot_monocle/Adult_BoneMarrow/owrap_plots.pdf (missing locally, parent dir contents: oplots_listn_RDS.rds, node_1.pdf, node_2.pdf, oplot_pseudotimeHeatmap.pdf, node_3.pdf, oGenexpress_changes_over_pseudotime.pdf)
+Removing output files of failed job Plot_monocle since they might be corrupted:
+figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+Waiting at most 5 seconds for missing files:
+figure_out/20_Plot_monocle/Adult_Spleen/owrap_plots.pdf (missing locally)
+MissingOutputException in rule Plot_monocle in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 448:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+figure_out/20_Plot_monocle/Adult_Spleen/owrap_plots.pdf (missing locally, parent dir contents: node_4.pdf, oplots_listn_RDS.rds, node_1.pdf, node_2.pdf, oplot_pseudotimeHeatmap.pdf, node_3.pdf, node_5.pdf, oGenexpress_changes_over_pseudotime.pdf)
+Removing output files of failed job Plot_monocle since they might be corrupted:
+figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+Waiting at most 5 seconds for missing files:
+figure_out/20_Plot_monocle/Adult_PeritonealCavity/owrap_plots.pdf (missing locally)
+MissingOutputException in rule Plot_monocle in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 448:
+Job 4  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+figure_out/20_Plot_monocle/Adult_PeritonealCavity/owrap_plots.pdf (missing locally, parent dir contents: oplots_listn_RDS.rds, node_1.pdf, node_2.pdf, oplot_pseudotimeHeatmap.pdf, oGenexpress_changes_over_pseudotime.pdf)
+Removing output files of failed job Plot_monocle since they might be corrupted:
+figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Aug 12 00:34:35 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 2
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+[Tue Aug 12 00:34:35 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 1
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+[Tue Aug 12 00:34:35 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 3
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+[Tue Aug 12 00:34:35 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 4
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/owrap_plots.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-12T003400.658673.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

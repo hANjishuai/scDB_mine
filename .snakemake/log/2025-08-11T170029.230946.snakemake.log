@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all_monocle2        1
+monocle2            4
+total               5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug 11 17:00:29 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, result_out/18_monocle2/Adult_BoneMarrow/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_BoneMarrow/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_BoneMarrow/ocds.rds
+    jobid: 1
+    reason: Forced execution
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug 11 17:00:29 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_Spleen/ocds.rds
+    jobid: 3
+    reason: Missing output files: result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug 11 17:00:29 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+    jobid: 4
+    reason: Forced execution
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug 11 17:00:29 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeripheralBlood/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds
+    jobid: 2
+    reason: Forced execution
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug 11 17:02:38 2025]
+Finished jobid: 3 (Rule: monocle2)
+1 of 5 steps (20%) done
+[Mon Aug 11 17:03:25 2025]
+Finished jobid: 2 (Rule: monocle2)
+2 of 5 steps (40%) done
+[Mon Aug 11 17:03:27 2025]
+Finished jobid: 1 (Rule: monocle2)
+3 of 5 steps (60%) done
+[Mon Aug 11 17:03:47 2025]
+Finished jobid: 4 (Rule: monocle2)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 17:03:47 2025]
+localrule all_monocle2:
+    input: result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_BoneMarrow/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeripheralBlood/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_BoneMarrow/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeripheralBlood/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+    jobid: 0
+    reason: Input files updated by another job: result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeripheralBlood/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_BoneMarrow/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_BoneMarrow/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/ocds.rds
+    resources: tmpdir=/tmp
+[Mon Aug 11 17:03:47 2025]
+Finished jobid: 0 (Rule: all_monocle2)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T170029.230946.snakemake.log

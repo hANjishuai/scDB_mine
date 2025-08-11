@@ -1,0 +1,39 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+Plot_pyscenic            1
+all_Plot_pyscenic        1
+total                    2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 16:46:02 2025]
+localrule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug 11 16:46:22 2025]
+Finished jobid: 1 (Rule: Plot_pyscenic)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 16:46:22 2025]
+localrule all_Plot_pyscenic:
+    input: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata, result_out/15_Plot_pyscenic/Adult_PeripheralBlood/seurat_rdata.Rdata, result_out/15_Plot_pyscenic/Adult_Spleen/seurat_rdata.Rdata, result_out/15_Plot_pyscenic/Adult_PeritonealCavity/seurat_rdata.Rdata
+    jobid: 0
+    reason: Input files updated by another job: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    resources: tmpdir=/tmp
+[Mon Aug 11 16:46:22 2025]
+Finished jobid: 0 (Rule: all_Plot_pyscenic)
+2 of 2 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T164601.858199.snakemake.log

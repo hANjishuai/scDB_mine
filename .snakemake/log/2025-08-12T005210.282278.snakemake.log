@@ -1,0 +1,113 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+Plot_monocle            4
+all_Plot_monocle        1
+total                   5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Aug 12 00:52:10 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+    jobid: 1
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:52:10 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+    jobid: 4
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:52:10 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+    jobid: 3
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Tue Aug 12 00:52:10 2025]
+localrule Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+    jobid: 2
+    reason: Missing output files: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 469:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmphggdseqf.17_Plot_monocle.R' returned non-zero exit status 1.
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 2
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 469:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpkjlcrgj5.17_Plot_monocle.R' returned non-zero exit status 1.
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 3
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 469:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmp1gxm67d6.17_Plot_monocle.R' returned non-zero exit status 1.
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 1
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 469:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpz5z8k3bb.17_Plot_monocle.R' returned non-zero exit status 1.
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 4
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 1
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_BoneMarrow/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_BoneMarrow/oplots_listn_RDS.rds
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 4
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeritonealCavity/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeritonealCavity/oplots_listn_RDS.rds
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 3
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_Spleen/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_Spleen/oplots_listn_RDS.rds
+[Tue Aug 12 00:52:17 2025]
+Error in rule Plot_monocle:
+    message: None
+    jobid: 2
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds
+    output: figure_out/20_Plot_monocle/Adult_PeripheralBlood/oGenexpress_changes_over_pseudotime.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplot_pseudotimeHeatmap.pdf, figure_out/20_Plot_monocle/Adult_PeripheralBlood/oplots_listn_RDS.rds
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-12T005210.282278.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

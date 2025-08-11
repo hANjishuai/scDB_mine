@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+Plot_pyscenic            1
+all_Plot_pyscenic        1
+total                    2
+
+Select jobs to execute...
+
+[Mon Aug 11 16:45:28 2025]
+rule Plot_pyscenic:
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    jobid: 1
+    reason: Missing output files: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+
+[Mon Aug 11 16:45:28 2025]
+Error in rule Plot_pyscenic:
+    jobid: 1
+    input: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom, result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/15_Plot_pyscenic/Adult_BoneMarrow/seurat_rdata.Rdata
+
+RuleException:
+CalledProcessError in file /home/test/workshop/B1/scDB_mine/Snakefile, line 339:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpm4_54mka.12_Plot_pyscenic.R' returned non-zero exit status 1.
+  File "/home/test/workshop/B1/scDB_mine/Snakefile", line 339, in __rule_Plot_pyscenic
+  File "/home/test/anaconda3/envs/pyscenic/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-08-11T164527.869211.snakemake.log

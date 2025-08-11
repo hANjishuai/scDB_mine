@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all_pre_Plot_monocle        1
+pre_Plot_monocle            4
+total                       5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug 11 22:27:08 2025]
+localrule pre_Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds, result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_trajectory_State.pdf
+    jobid: 2
+    reason: Missing output files: result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_trajectory_State.pdf, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+[Mon Aug 11 22:27:08 2025]
+localrule pre_Plot_monocle:
+    input: result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_trajectory_State.pdf
+    jobid: 4
+    reason: Missing output files: figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug 11 22:27:08 2025]
+localrule pre_Plot_monocle:
+    input: result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_trajectory_State.pdf
+    jobid: 1
+    reason: Missing output files: result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ocds_DGT_pseudotimegenes.rds, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug 11 22:27:08 2025]
+localrule pre_Plot_monocle:
+    input: result_out/18_monocle2/Adult_Spleen/ocds.rds, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, db/pyscenic/mouse/Regulon_TFs.xls
+    output: result_out/19_pre_Plot_monocle/Adult_Spleen/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_trajectory_State.pdf
+    jobid: 3
+    reason: Missing output files: figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_density.pdf
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug 11 22:39:40 2025]
+Finished jobid: 2 (Rule: pre_Plot_monocle)
+1 of 5 steps (20%) done
+[Mon Aug 11 22:54:30 2025]
+Finished jobid: 3 (Rule: pre_Plot_monocle)
+2 of 5 steps (40%) done
+[Mon Aug 11 23:04:19 2025]
+Finished jobid: 1 (Rule: pre_Plot_monocle)
+3 of 5 steps (60%) done
+[Mon Aug 11 23:11:49 2025]
+Finished jobid: 4 (Rule: pre_Plot_monocle)
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 23:11:49 2025]
+localrule all_pre_Plot_monocle:
+    input: result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_trajectory_State.pdf
+    jobid: 0
+    reason: Input files updated by another job: figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_trajectory_State.pdf, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ocds_DGT_pseudotimegenes.rds, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_density.pdf, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/otopn.rds, result_out/19_pre_Plot_monocle/Adult_Spleen/oBEAM_res_list.rds, figure_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oplot_monocle2_trajectory_State.pdf, result_out/19_pre_Plot_monocle/Adult_Spleen/otopn.rds, figure_out/19_pre_Plot_monocle/Adult_PeritonealCavity/oplot_monocle2_trajectory_State.pdf, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/oBEAM_res_list.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/otopn.rds, result_out/19_pre_Plot_monocle/Adult_PeritonealCavity/ocds_DGT_pseudotimegenes.rds, figure_out/19_pre_Plot_monocle/Adult_Spleen/oplot_monocle2_trajectory_State.pdf, result_out/19_pre_Plot_monocle/Adult_Spleen/ostates_de.rds, result_out/19_pre_Plot_monocle/Adult_PeripheralBlood/oBEAM_res_list.rds, figure_out/19_pre_Plot_monocle/Adult_BoneMarrow/oplot_monocle2_density.pdf, result_out/19_pre_Plot_monocle/Adult_Spleen/ocds_DGT_pseudotimegenes.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/otopn.rds, result_out/19_pre_Plot_monocle/Adult_BoneMarrow/ostates_de.rds
+    resources: tmpdir=/tmp
+[Mon Aug 11 23:11:49 2025]
+Finished jobid: 0 (Rule: all_pre_Plot_monocle)
+5 of 5 steps (100%) done
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T222708.861396.snakemake.log

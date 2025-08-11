@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule aucell in file /home/test/workshop/B1/scDB_mine/Snakefile, line 298:
+Missing input files for rule aucell:
+    output: result_out/14_aucell/Adult_BoneMarrow/sce.SCENIC.loom
+    wildcards: tissue_all=Adult_BoneMarrow
+    affected files:
+        result_out/13_RcisTarget/Adult_BoneMarrow/sce.regulons.csv

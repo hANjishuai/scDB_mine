@@ -1,0 +1,77 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all_monocle2        1
+monocle2            4
+total               5
+
+Select jobs to execute...
+Execute 4 jobs...
+[Mon Aug 11 14:38:59 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_BoneMarrow/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, result_out/18_monocle2/Adult_BoneMarrow/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_BoneMarrow/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_BoneMarrow/ocds.rds
+    jobid: 1
+    reason: Missing output files: result_out/18_monocle2/Adult_BoneMarrow/seurat_rdata.rds, result_out/18_monocle2/Adult_BoneMarrow/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_BoneMarrow/ocds.rds, result_out/18_monocle2/Adult_BoneMarrow/otrain_monocle_DEG_df.xls
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+[Mon Aug 11 14:38:59 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_Spleen/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_Spleen/ocds.rds
+    jobid: 3
+    reason: Missing output files: result_out/18_monocle2/Adult_Spleen/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_Spleen/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_Spleen/seurat_rdata.rds, result_out/18_monocle2/Adult_Spleen/ocds.rds
+    wildcards: tissue_all=Adult_Spleen
+    resources: tmpdir=/tmp
+[Mon Aug 11 14:38:59 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+    jobid: 4
+    reason: Missing output files: result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+    wildcards: tissue_all=Adult_PeritonealCavity
+    resources: tmpdir=/tmp
+[Mon Aug 11 14:38:59 2025]
+localrule monocle2:
+    input: result_out/17_Enrichment/Adult_PeripheralBlood/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeripheralBlood/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds
+    jobid: 2
+    reason: Missing output files: result_out/18_monocle2/Adult_PeripheralBlood/seurat_rdata.rds, result_out/18_monocle2/Adult_PeripheralBlood/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeripheralBlood/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeripheralBlood/ocds.rds
+    wildcards: tissue_all=Adult_PeripheralBlood
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 408:
+Command 'set -euo pipefail;  Rscript --vanilla /home/test/workshop/B1/scDB_mine/.snakemake/scripts/tmpsg_63xrg.15_monocle2.R' returned non-zero exit status 1.
+[Mon Aug 11 14:39:10 2025]
+Error in rule monocle2:
+    message: None
+    jobid: 4
+    input: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+[Mon Aug 11 14:39:15 2025]
+Finished jobid: 2 (Rule: monocle2)
+1 of 5 steps (20%) done
+[Mon Aug 11 14:39:20 2025]
+Finished jobid: 1 (Rule: monocle2)
+2 of 5 steps (40%) done
+[Mon Aug 11 14:41:07 2025]
+Finished jobid: 3 (Rule: monocle2)
+3 of 5 steps (60%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug 11 14:41:07 2025]
+Error in rule monocle2:
+    message: None
+    jobid: 4
+    input: result_out/17_Enrichment/Adult_PeritonealCavity/seurat_rdata.Rdata
+    output: result_out/18_monocle2/Adult_PeritonealCavity/seurat_rdata.rds, result_out/18_monocle2/Adult_PeritonealCavity/otrain_monocle_DEG_df.xls, result_out/18_monocle2/Adult_PeritonealCavity/oplot_ordering_genes.pdf, result_out/18_monocle2/Adult_PeritonealCavity/ocds.rds
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T143859.605930.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,50 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: test
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all_trans2loom        1
+trans2loom            1
+total                 2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 11 15:10:18 2025]
+localrule trans2loom:
+    input: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    jobid: 1
+    reason: Missing output files: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    wildcards: tissue_all=Adult_BoneMarrow
+    resources: tmpdir=/tmp
+RuleException:
+CalledProcessError in file "/home/test/workshop/B1/scDB_mine/Snakefile", line 231:
+Command 'set -euo pipefail;  python pipeline/11_trans2loom.py result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom' returned non-zero exit status 1.
+[Mon Aug 11 15:10:19 2025]
+Error in rule trans2loom:
+    message: None
+    jobid: 1
+    input: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    shell:
+        python pipeline/11_trans2loom.py result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug 11 15:10:19 2025]
+Error in rule trans2loom:
+    message: None
+    jobid: 1
+    input: result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv
+    output: result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+    shell:
+        python pipeline/11_trans2loom.py result_out/10_SubcellAnnoCheck/Adult_BoneMarrow/loom_expression.csv result_out/11_trans2loom/Adult_BoneMarrow/loom_sce.loom
+        (command exited with non-zero exit code)
+Complete log(s): /home/test/workshop/B1/scDB_mine/.snakemake/log/2025-08-11T151018.065197.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

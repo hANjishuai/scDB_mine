@@ -232,4 +232,56 @@ params17:
   figure_dir: "figure_out/17_Enrichment/{tissue_all}"
 #  ocolor_palette: "result_out/17_Enrichment/{tissue_all}"
 
+# 18_monocle2
+input18:
+  iSeurat_sub: "result_out/17_Enrichment/{tissue_all}/seurat_rdata.Rdata"
+
+output18:
+  oseuratdata: "result_out/18_monocle2/{tissue_all}/seurat_rdata.rds"
+  otrain_monocle_DEG_df: "result_out/18_monocle2/{tissue_all}/otrain_monocle_DEG_df.xls"
+  oplot_ordering_genes: "result_out/18_monocle2/{tissue_all}/oplot_ordering_genes.pdf"
+  ocds: "result_out/18_monocle2/{tissue_all}/ocds.rds"
+
+params18:
+  pmetadat_col: "manual_L2"
+  pcelltype: "manual_L2"
+  pselected_celltype: "result_out/17_Enrichment/{tissue_all}/monocle_selected_cell.csv"
+
+# 19_pre_Plot_monocle
+input19:
+  icds: "result_out/18_monocle2/{tissue_all}/ocds.rds"
+  iseu: "result_out/18_monocle2/{tissue_all}/seurat_rdata.rds"
+  igenes: "db/pyscenic/mouse/Regulon_TFs.xls"
+
+
+output19:
+  ocds_DGT_pseudotimegenes: "result_out/19_pre_Plot_monocle/{tissue_all}/ocds_DGT_pseudotimegenes.rds"
+  ostates_de: "result_out/19_pre_Plot_monocle/{tissue_all}/ostates_de.rds"
+  oBEAM_res_list: "result_out/19_pre_Plot_monocle/{tissue_all}/oBEAM_res_list.rds"
+  otopn: "result_out/19_pre_Plot_monocle/{tissue_all}/otopn.rds"
+  oplot_monocle2_trajectory_State: "figure_out/19_pre_Plot_monocle/{tissue_all}/oplot_monocle2_density.pdf"
+  oplot_monocle2_density: "figure_out/19_pre_Plot_monocle/{tissue_all}/oplot_monocle2_trajectory_State.pdf"
+
+params19:
+  pmetadat_col: "manual_L2"
+
+# 20_Plot_monocle
+input20:
+  icds: "result_out/18_monocle2/{tissue_all}/ocds.rds"
+  iseu: "result_out/18_monocle2/{tissue_all}/seurat_rdata.rds"
+  igenes: "db/pyscenic/mouse/Regulon_TFs.xls"
+  itopn: "result_out/19_pre_Plot_monocle/{tissue_all}/otopn.rds"
+  istates_de: "result_out/19_pre_Plot_monocle/{tissue_all}/ostates_de.rds"
+  iBEAM_res_list: "result_out/19_pre_Plot_monocle/{tissue_all}/oBEAM_res_list.rds"
+
+output20:
+  oGenexpress_changes_over_pseudotime: "figure_out/20_Plot_monocle/{tissue_all}/oGenexpress_changes_over_pseudotime.pdf"
+  oplot_pseudotimeHeatmap: "figure_out/20_Plot_monocle/{tissue_all}/oplot_pseudotimeHeatmap.pdf"
+  oplots_listn_RDS: "figure_out/20_Plot_monocle/{tissue_all}/oplots_listn_RDS.rds"
+
+params20:
+  pmetadat_col: "manual_L2"
+  poutdir: "figure_out/20_Plot_monocle/{tissue_all}/"
+  pgemt_list_path: "db/monocle2/mouse/gmt"
+
 
