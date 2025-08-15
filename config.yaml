@@ -284,4 +284,50 @@ params20:
   poutdir: "figure_out/20_Plot_monocle/{tissue_all}/"
   pgemt_list_path: "db/monocle2/mouse/gmt"
 
+# 21_Pre_GSVA
+input21:
+  iSeurat: "result_out/10_SubcellAnnoCheck/{tissue_all}/seurat_rdata.Rdata"
+  ipathway_ID: "db/pyscenic/mouse/Regulon_TFs.xls"
 
+output21:
+  odat: "result_out/21_Pre_GSVA/{tissue_all}/gsva_dats.rds"
+  ogenesets: "result_out/21_Pre_GSVA/{tissue_all}/gsva_genesets.rds"
+
+params21:
+  pident: "manual_L2"
+
+# 22_GSVA
+input22:
+  igenesets: "result_out/21_Pre_GSVA/{tissue_all}/gsva_genesets.rds"
+  idats: "result_out/21_Pre_GSVA/{tissue_all}/gsva_dats.rds"
+
+output22:
+  obulk_gsva: "result_out/22_GSVA/{tissue_all}/obulk_gsva.csv"
+
+# 23_Plot_GSVA
+input23:
+  ibulk_gsva: "result_out/22_GSVA/{tissue_all}/obulk_gsva.csv"
+  igenesets: "result_out/21_Pre_GSVA/{tissue_all}/gsva_genesets.rds"
+  iDEG_path: result_out/17_Enrichment/{tissue_all}/ofindallmarkers_filter_df.csv
+
+output23:
+  obulk_gsva_heatmap_data: "result_out/23_Plot_GSVA/{tissue_all}/obulk_gsva_heatmap_data.csv"
+  obulk_gsva_heatmap: "figure_out/23_Plot_GSVA/{tissue_all}/obulk_gsva_heatmap.pdf"
+
+params23:
+  pmin: -0.9
+  pmax: 0.9
+  psize_w: 25
+  psize_h: 16
+  ideg_list: "result_out/23_Plot_GSVA/{tissue_all}/"
+
+# 24_GSEA
+input24:
+  iseurat: "result_out/18_monocle2/{tissue_all}/seurat_rdata.rds"
+  ipathway_ID: "db/pyscenic/mouse/Regulon_TFs.xls"
+
+output24:
+  ogsea_egmt: "result_out/24_GSEA/{tissue_all}/gsea_egmt.RData"
+
+params24: 
+  pgsea_list: "result_out/24_GSEA/{tissue_all}/"

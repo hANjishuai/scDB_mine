@@ -436,34 +436,112 @@ tissue_all = config["tissue_all"]
 #
 #    script:
 #        "pipeline/16_pre_Plot_monocle.R"
+#
+## plot monocle 
+#rule all_Plot_monocle:
+#    input:
+#        expand(config["output20"]["oGenexpress_changes_over_pseudotime"],tissue_all=tissue_all),
+##        expand(config["output20"]["owrap_plots"],tissue_all=tissue_all),
+#        expand(config["output20"]["oplot_pseudotimeHeatmap"],tissue_all=tissue_all),
+#        expand(config["output20"]["oplots_listn_RDS"],tissue_all=tissue_all)
+#
+#rule Plot_monocle:
+#    input:
+#        icds = lambda wildcards: config["input20"]["icds"].format(tissue_all=wildcards.tissue_all),
+#        iseu = lambda wildcards: config["input20"]["iseu"].format(tissue_all=wildcards.tissue_all),
+#        igenes = lambda wildcards: config["input20"]["igenes"].format(tissue_all=wildcards.tissue_all), 
+#        itopn = lambda wildcards: config["input20"]["itopn"].format(tissue_all=wildcards.tissue_all),
+#        istates_de = lambda wildcards: config["input20"]["istates_de"].format(tissue_all=wildcards.tissue_all),
+#        iBEAM_res_list = lambda wildcards: config["input20"]["iBEAM_res_list"].format(tissue_all=wildcards.tissue_all)
+#
+#    output:
+#        oGenexpress_changes_over_pseudotime = config["output20"]["oGenexpress_changes_over_pseudotime"],
+##        owrap_plots = config["output20"]["owrap_plots"],
+#        oplot_pseudotimeHeatmap = config["output20"]["oplot_pseudotimeHeatmap"],
+#        oplots_listn_RDS = config["output20"]["oplots_listn_RDS"]
+#
+#    params:
+#        pmetadat_col = config["params20"]["pmetadat_col"],
+#        poutdir = config["params20"]["poutdir"],
+#        pgemt_list_path = config["params20"]["pgemt_list_path"]     
+#
+#    script:
+#        "pipeline/17_Plot_monocle.R"
+#
+#rule all_Pre_GSVA:
+#    input:
+#        expand(config["output21"]["odat"],tissue_all=tissue_all),
+#        expand(config["output21"]["ogenesets"],tissue_all=tissue_all)
+#
+#rule Pre_GSVA:
+#    input:
+#        iSeurat = lambda wildcards: config["input21"]["iSeurat"].format(tissue_all=wildcards.tissue_all),
+#        ipathway_ID = config["input21"]["ipathway_ID"]
+#
+#    output:
+#        odat = config["output21"]["odat"],
+#        ogenesets = config["output21"]["ogenesets"]
+#
+#    params:
+#        pident = config["params21"]["pident"]
+#
+#    script:
+#        "pipeline/18_Pre_GSVA.R"
+#
+#rule all_GSVA:
+#    input:
+#        expand(config["output22"]["obulk_gsva"],tissue_all=tissue_all)
+#
+#rule GSVA:
+#    input:
+#        igenesets = lambda wildcards: config["input22"]["igenesets"].format(tissue_all=wildcards.tissue_all),
+#        idats = lambda wildcards: config["input22"]["idats"].format(tissue_all=wildcards.tissue_all)
+#
+#    output:
+#        obulk_gsva = config["output22"]["obulk_gsva"]
+#
+#    script:
+#        "pipeline/19_GSVA.R"
+#
+#rule all_Plot_GSVA:
+#    input:
+#        expand(config["output23"]["obulk_gsva_heatmap_data"],tissue_all=tissue_all),
+#        expand(config["output23"]["obulk_gsva_heatmap"],tissue_all=tissue_all)
+#
+#rule Plot_GSVA:
+#    input:
+#        ibulk_gsva = lambda wildcards: config["input23"]["ibulk_gsva"].format(tissue_all=wildcards.tissue_all),
+#        igenesets = lambda wildcards: config["input23"]["igenesets"].format(tissue_all=wildcards.tissue_all),
+#        iDEG_path = lambda wildcards: config["input23"]["iDEG_path"].format(tissue_all=wildcards.tissue_all)
+#
+#    output:
+#        obulk_gsva_heatmap_data = config["output23"]["obulk_gsva_heatmap_data"],
+#        obulk_gsva_heatmap = config["output23"]["obulk_gsva_heatmap"]
+#
+#    params:
+#        pmin = config["params23"]["pmin"],
+#        pmax = config["params23"]["pmax"],
+#        psize_w = config["params23"]["psize_w"],
+#        psize_h = config["params23"]["psize_h"],
+#        ideg_list = lambda wildcards: config["params23"]["ideg_list"].format(tissue_all=wildcards.tissue_all)
+#
+#    script:
+#        "pipeline/20_Plot_GSVA.R"
 
-# plot monocle 
-rule all_Plot_monocle:
+rule all_GSEA:
     input:
-        expand(config["output20"]["oGenexpress_changes_over_pseudotime"],tissue_all=tissue_all),
-#        expand(config["output20"]["owrap_plots"],tissue_all=tissue_all),
-        expand(config["output20"]["oplot_pseudotimeHeatmap"],tissue_all=tissue_all),
-        expand(config["output20"]["oplots_listn_RDS"],tissue_all=tissue_all)
-
-rule Plot_monocle:
+        expand(config["output24"]["ogsea_egmt"],tissue_all=tissue_all)
+    
+rule GSEA:
     input:
-        icds = lambda wildcards: config["input20"]["icds"].format(tissue_all=wildcards.tissue_all),
-        iseu = lambda wildcards: config["input20"]["iseu"].format(tissue_all=wildcards.tissue_all),
-        igenes = lambda wildcards: config["input20"]["igenes"].format(tissue_all=wildcards.tissue_all), 
-        itopn = lambda wildcards: config["input20"]["itopn"].format(tissue_all=wildcards.tissue_all),
-        istates_de = lambda wildcards: config["input20"]["istates_de"].format(tissue_all=wildcards.tissue_all),
-        iBEAM_res_list = lambda wildcards: config["input20"]["iBEAM_res_list"].format(tissue_all=wildcards.tissue_all)
+        iseurat = lambda wildcards: config["input24"]["iseurat"].format(tissue_all=wildcards.tissue_all),
+        ipathway_ID = config["input24"]["ipathway_ID"]
 
     output:
-        oGenexpress_changes_over_pseudotime = config["output20"]["oGenexpress_changes_over_pseudotime"],
-#        owrap_plots = config["output20"]["owrap_plots"],
-        oplot_pseudotimeHeatmap = config["output20"]["oplot_pseudotimeHeatmap"],
-        oplots_listn_RDS = config["output20"]["oplots_listn_RDS"]
+        ogsea_egmt = config["output24"]["ogsea_egmt"]
 
     params:
-        pmetadat_col = config["params20"]["pmetadat_col"],
-        poutdir = config["params20"]["poutdir"],
-        pgemt_list_path = config["params20"]["pgemt_list_path"]     
+        pgsea_list = lambda wildcards: config["params24"]["pgsea_list"].format(tissue_all=wildcards.tissue_all)
 
     script:
-        "pipeline/17_Plot_monocle.R"
+        "pipeline/21_GSEA.R"
