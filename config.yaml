@@ -331,3 +331,19 @@ output24:
 
 params24: 
   pgsea_list: "result_out/24_GSEA/{tissue_all}/"
+
+# 25_singleGene
+input25:
+  iSeurat: "result_out/18_monocle2/{tissue_all}/seurat_rdata.rds"
+  ipathway_ID: "db/pyscenic/mouse/Regulon_TFs.xls"
+
+output25:
+  osingle_gene_expression: "result_out/25_singleGene/{tissue_all}/gene_expression.RData"
+
+params25:
+  pident: "manual_L2"
+  pmin: -0.9
+  pmax: 0.9
+  psize_w: 10
+  psize_h: 14
+  psingle_gene_list: "figure_out/25_singleGene/{tissue_all}/"

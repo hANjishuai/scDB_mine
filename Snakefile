@@ -527,21 +527,44 @@ tissue_all = config["tissue_all"]
 #
 #    script:
 #        "pipeline/20_Plot_GSVA.R"
+#
+#rule all_GSEA:
+#    input:
+#        expand(config["output24"]["ogsea_egmt"],tissue_all=tissue_all)
+#    
+#rule GSEA:
+#    input:
+#        iseurat = lambda wildcards: config["input24"]["iseurat"].format(tissue_all=wildcards.tissue_all),
+#        ipathway_ID = config["input24"]["ipathway_ID"]
+#
+#    output:
+#        ogsea_egmt = config["output24"]["ogsea_egmt"]
+#
+#    params:
+#        pgsea_list = lambda wildcards: config["params24"]["pgsea_list"].format(tissue_all=wildcards.tissue_all)
+#
+#    script:
+#        "pipeline/21_GSEA.R"
 
-rule all_GSEA:
+rule all_singleGene:
     input:
-        expand(config["output24"]["ogsea_egmt"],tissue_all=tissue_all)
-    
-rule GSEA:
+        expand(config["output25"]["osingle_gene_expression"],tissue_all=tissue_all)
+
+rule singleGene:
     input:
-        iseurat = lambda wildcards: config["input24"]["iseurat"].format(tissue_all=wildcards.tissue_all),
-        ipathway_ID = config["input24"]["ipathway_ID"]
+        iSeurat = lambda wildcards: config["input25"]["iSeurat"].format(tissue_all=wildcards.tissue_all),
+        ipathway_ID = config["input25"]["ipathway_ID"]
 
     output:
-        ogsea_egmt = config["output24"]["ogsea_egmt"]
+        osingle_gene_expression = config["output25"]["osingle_gene_expression"]
 
     params:
-        pgsea_list = lambda wildcards: config["params24"]["pgsea_list"].format(tissue_all=wildcards.tissue_all)
+        pident = config["params25"]["pident"],
+        pmin = config["params25"]["pmin"],
+        pmax = config["params25"]["pmax"],
+        psize_w = config["params25"]["psize_w"],
+        psize_h = config["params25"]["psize_h"],
+        psingle_gene_list = lambda wildcards: config["params25"]["psingle_gene_list"].format(tissue_all=wildcards.tissue_all)
 
     script:
-        "pipeline/21_GSEA.R"
+        "pipeline/22_singleGene.R"
