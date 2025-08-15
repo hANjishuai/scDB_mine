@@ -2,5 +2,5 @@ data/
 db/pyscenic
 figure_out/
 result_out/
-.snakemake
-.vscode
+.snakemake/
+.vscode/
